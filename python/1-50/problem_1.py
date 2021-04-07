@@ -16,7 +16,8 @@ def sum_of_multiples(num_below, *nums_multiple):
         acc = num # accumulator
 
         while acc < num_below:
-            multiples.append(acc)
+            if acc not in multiples:
+                multiples.append(acc)
             acc += num
 
     return sum(multiples)
