@@ -1,11 +1,5 @@
-"""
-Project Euler - Problem 13
-
-Name: Large sum
-
-Description:
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
-"""
+# Name:     Large sum
+# Source:   https://projecteuler.net/problem=13
 
 numbers = [
     37107287533902102798797998220837590246510135740250,
