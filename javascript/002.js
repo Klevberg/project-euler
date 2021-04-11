@@ -3,6 +3,7 @@
 
 
 function even_fibonacci_sum(num_below) {
+
     let a = 1;
     let b = 1;
     let n = 0;
@@ -18,7 +19,7 @@ function even_fibonacci_sum(num_below) {
     }
 
     return even_fib.reduce((x, y) => x + y);
-}
 
+}
 
 console.log(even_fibonacci_sum(4_000_000));
