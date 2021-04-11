@@ -1,3 +1,7 @@
+// Name:     Multiples of 3 and 5
+// Source:   https://projecteuler.net/problem=1
+
+
 class Problem_001 {
 
     public static void main(String[] args) {
