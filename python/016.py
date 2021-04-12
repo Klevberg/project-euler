@@ -2,9 +2,7 @@
 # Source:   https://projecteuler.net/problem=16
 
 
-def power_digit_sum(exponent):
-
-    return sum(list(map(int, str(2**exponent))))
+power_digit_sum = lambda exp: sum(map(int, str(2**exp)))
 
 
 print(power_digit_sum(1000))
