@@ -5,9 +5,7 @@
 from itertools import permutations
 
 
-def get_permutation(digits, nth_permutation):
-    
-    return int(''.join(map(str, list(permutations(digits))[nth_permutation - 1])))
+get_permutation = lambda digits, nth_permutation: int(''.join(map(str, list(permutations(digits))[nth_permutation - 1])))
 
 
 print(get_permutation(range(10), 1_000_000))
