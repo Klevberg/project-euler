@@ -1,47 +1,20 @@
 # Name:     Longest Collatz sequence
 # Source:   https://projecteuler.net/problem=14
 
-# TODO: Optimize code.
+
+memoize_dict = {1: 1}
 
 
-sequence_dict = {1: [1], 2: [2, 1]}
+def get_seq_length(num):
 
+    acc, length = num, 1
 
-def collatz_sequence(num):
+    while acc not in memoize_dict: acc = acc//2 if acc % 2 == 0 else 3*acc + 1; length += 1
 
-    if num == 1:
-        return [1]
+    return memoize_dict.setdefault(num, length + memoize_dict[acc])
+
     
-    sequence = []
-
-    while num != 1:
-
-        if num in sequence_dict:
-            sequence.extend(sequence_dict.get(num))
-            break
-
-        sequence.append(num)
-
-        num = num//2 if num % 2 == 0 else 3*num + 1
-    
-    return sequence
+longest_collatz_seq = lambda num: max((get_seq_length(n), n) for n in range(1, num, 2 if num > 73 else 1))[1]
 
 
-def longest_collatz_sequence(num):
-
-    number, length = 0, 0
-    
-    for n in range(1, num, 2):
-        sequence = collatz_sequence(n)
-
-        sequence_dict[n] = sequence
-
-        sequence_length = len(sequence)
-
-        if sequence_length > length:
-            number, length = n, sequence_length
-    
-    return number
-
-
-print(longest_collatz_sequence(1_000_000))
+print(longest_collatz_seq(1_000_000))
