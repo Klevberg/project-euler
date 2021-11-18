@@ -13,4 +13,4 @@ def name_scores(filename):
         return sum((i + 1)*value for i, value in enumerate(values))
 
 
-print(name_scores("./python/resources/p022_names.txt"))
+print(name_scores("names.txt"))
